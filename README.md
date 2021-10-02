@@ -4,7 +4,7 @@
 ### Detección y reidentificación de caras en secuencias de imágenes o video
 ### Alumnos:
 - Camilo Clift (Coordinador)
-- Emilio Díaz (Rol)
+- Emilio Díaz (Bitácora)
 ## Bitácora
 - [Ver Bitácora](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/BITACORA.md)
 ## Resumen
