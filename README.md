@@ -1,4 +1,4 @@
-
+![Logo UCN](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/60x60-ucn-negro.png)
 # Informe Técnico
 ## Curso: Estructura de datos
 Detección y reidentificación de caras en secuencias de imágenes o video
