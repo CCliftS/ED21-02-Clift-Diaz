@@ -25,3 +25,12 @@
 > Se configura la biblioteca OpenCV en el entorno de desarrollo integrado (Visual Basic).
 > 
 > Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en una imagen de formato .jpg
+
+## 1. Introducción
+
+### 1.1 Descripción del problema
+Se solicita un programa con la capacidad de reconocer caras en una imagen y encerrarlas en un rectángulo del color especificado (rojo).
+### 1.2 Objetivos
+**Objetivo General**
+Construir un programa capaz de reconocer y demarcar caras en una foto.
+**Objetivos Específicos**
