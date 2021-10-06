@@ -37,3 +37,6 @@ Construir un programa capaz de reconocer y demarcar caras en una foto.
 
 **Objetivos Específicos**
 
+1. Adquisición e instalación de Software necesario.
+2. Redacción de código de detección facial.
+3. Detección de caras usando programa creado.
