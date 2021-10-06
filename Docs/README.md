@@ -10,7 +10,7 @@
  - Camilo Clift Silva (Coordinador)
  - Emilio Díaz Bustos (Bitácora)
 
-## ResumeM
+## ResumeN
 
 > Se requiere implementar un sistema de detección facial en una imagen, haciendo uso de un algoritmo computacional y una biblioteca libre de visión artificial.
 > 
