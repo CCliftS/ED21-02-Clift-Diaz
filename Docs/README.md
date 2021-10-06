@@ -22,7 +22,7 @@
 > 
 > Se configura el entorno de desarrollo integrado Visual Studio para utilizar en él la biblioteca de visión artificial.
 >
-> Se configura la biblioteca OpenCV en el entorno de desarrollo integrado (Visual Basic).
+> Se configura la biblioteca OpenCV en el entorno de desarrollo integrado (Visual Studio).
 > 
 > Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en una imagen de formato .jpg
 
