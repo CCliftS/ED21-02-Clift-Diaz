@@ -23,6 +23,8 @@
 > 
 > Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en una imagen de formato .jpg
 
+![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
+
 ## Documentos
 - [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/README.md)
 ## Recursos Código Fuente
