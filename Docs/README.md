@@ -78,3 +78,21 @@ Se despliega la imagen:
        imshow("Image",img);
        waitKey(0);
 ```
+## 3. Resultados Obtenidos
+Se logra la lectura de una imagen y que en esta se reconozcan las distintas caras presentes.
+![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
+
+## 4. Conclusiones
+La biblioteca de OpenCV abre un mar de posibilidades en cuánto a la resolución de problemas de identificación de patrones visuales. Además de que no requiere de mucho esfuerzo para instalarla y utilizarla.
+Con el ejercicio de detección facial realizado, y el resto de herramientas utilizadas de OpenCV, además de lo poderoso que resulta C++, y que este es compatible con OpenCV, hay muchas aplicaciones en el área de la vigilancia de instalaciones en el que se podría desarrollar un sistema muy eficaz.
+## Anexos
+
+### Anexo A: Instalación librerías OpenCV
+
+Se ingresó a la página web https://opencv.org en la cual se hace la descarga del instalador de OpenCV, luego de su instalación se debió configurar en las variables de entorno del sistema añadiendo tanto la carpeta bin como las librerías del OpenCV.
+
+### Anexo B: Instalación de IDE y configuración librerías OpenCV
+
+Se hace ingreso a la página web del IDE Visual Studio (https://visualstudio.microsoft.com/es/) en la cual se descargo el instalador, luego de su instalación se debió descargar e instalar la carga de trabajo llamada “Desarrollo para el escritorio con C++”, finalmente se tuvo que configurar en el IDE a utilizar cambiando la plataforma de solución a 64 bits y añadiendo la biblioteca a Visual Studio..
+
+## Referencia
