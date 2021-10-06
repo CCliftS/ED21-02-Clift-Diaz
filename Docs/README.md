@@ -10,7 +10,7 @@
  - Camilo Clift Silva (Coordinador)
  - Emilio Díaz Bustos (Bitácora)
 
-## Resumen
+## Resume
 
 > Se requiere implementar un sistema de detección facial en una imagen, haciendo uso de un algoritmo computacional y una biblioteca libre de visión artificial.
 > 
@@ -32,6 +32,8 @@
 Se solicita un programa con la capacidad de reconocer caras en una imagen y encerrarlas en un rectángulo del color especificado (rojo).
 ### 1.2 Objetivos
 **Objetivo General**
+
 Construir un programa capaz de reconocer y demarcar caras en una foto.
+
 **Objetivos Específicos**
-AAA
+
