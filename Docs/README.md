@@ -34,7 +34,7 @@ Se solicita un programa con la capacidad de reconocer caras en una imagen y ence
 ### 1.2 Objetivos
 **Objetivo General**
 
-Construir un programa capaz de reconocer y demarcar caras en una foto.
+Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial maneje información de identidades de individuos, 
 
 **Objetivos Específicos**
 
@@ -49,7 +49,16 @@ Se creará un programa el cual utilizara la biblioteca de visión artificial Ope
 
 ### 2.1 Instalación
 
-Se instala Visual Basic (Visual Studio) y la biblioteca de visión artificial, OpenCV.
+Se instala Visual Basic (Visual Studio), un entorno de desarrollo integrado en el cuál se puede crear y desarrollar softwares como aplicaciones web y móviles, sitios o servicios web. Su primera versión es de 1997, por lo que ha pasado por varias revisiones en más de dos décadas que le han dado mayor solidez y estabilidad.
+
+En Visual Studio se puede:
+- Crear softwares y programas relativos al universo web, como es el caso de aplicaciones o móvil, incluso instrimentos de big data y analítica.
+- Editar, depurar y compilar código para posteriormente publicar una aplicación. Se puede ahorrar mucho esfuerzo en el desarrollo de tareas antes engorrosas y se puede ejecutar todas las fases de creación de un programa.
+- Reducir esfuerzo en actividades rutinarias y mejorar la eficiencia de las tareas esenciales de los desarrolladores.
+- Instalar integraciones y extensiones relacionadas con Machine Learning o Github.
+- Desarrollar extensiones propias. 
+
+También se requiere OpenCV, ésta es una biblioteca de código abierto que es muy útil para aplicaciones de visión por computadora, como análisis de video, análisis de secuencias de CCTV y análisis de imágenes. OpenCV está escrito por C ++ y tiene más de 2500 algoritmos optimizados. Cuando se crea aplicaciones para la visión por computadora que no se quiere crear desde cero, se puede usar esta biblioteca para comenzar a enfocarse en problemas del mundo real. Hay muchas empresas que utilizan esta biblioteca en la actualidad, como Google, Amazon, Microsoft y Toyota. Contribuyen muchos investigadores y desarrolladores. Se puede instalar fácilmente en cualquier SO como Windows, Ubuntu y MacOS.
 
 ### 2.2 Diseño
 
@@ -89,18 +98,10 @@ Con el ejercicio de detección facial realizado, y el resto de herramientas util
 
 ### Anexo A: Instalación librerías OpenCV
 
-Se hace ingreso a la página web https://opencv.org en la cual se debe dirigir a la sección de Library y seleccionar la opción de releases en la cual se hace la descarga del instalador de OpenCV version 4.5.3
-![OpenCV](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/OpenCV.PNG)
-
-Luego de la instalación por el instalador descargado anteriormente se debe añadir a las Variables de entorno del pc en PATH la dirección de opencv\build\x64\vc15\bin y opencv\build\x64\vc15\lib
-![VariablesEntorno](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/VariablesEntorno.PNG)
+Se ingresó a la página web https://opencv.org en la cual se hace la descarga del instalador de OpenCV, luego de su instalación se debió configurar en las variables de entorno del sistema añadiendo tanto la carpeta bin como las librerías del OpenCV.
 
 ### Anexo B: Instalación de IDE y configuración librerías OpenCV
-Se hace ingreso a la página web del IDE Visual Studio https://visualstudio.microsoft.com/es/ donde se hizo descarga de Visual Studio Community 2019 
-![WebVisualStudio](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/WebVisualStudio.PNG)
-Luego de la instalación de Visual Studio se debera descargar la extensión de Desarrollo para escritorio con C++
-![C++](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/C%2B%2BVisual.PNG)
-Cuando se tenga la extensión se debera cambiar la disposición del IDE para trabajar con 64 bits y hacerlo compatible con el OpenCV, finalmente se debera incluir los archivos de la biblioteca OpenCV en el proyecto
-![VisualStudio](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/VisualStudio.PNG)
+
+Se hace ingreso a la página web del IDE Visual Studio (https://visualstudio.microsoft.com/es/) en la cual se descargo el instalador, luego de su instalación se debió descargar e instalar la carga de trabajo llamada “Desarrollo para el escritorio con C++”, finalmente se tuvo que configurar en el IDE a utilizar cambiando la plataforma de solución a 64 bits y añadiendo la biblioteca a Visual Studio..
 
 ## Referencia
