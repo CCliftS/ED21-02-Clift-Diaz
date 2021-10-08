@@ -40,7 +40,7 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 
 1. Adquirir e instalar Software necesario para el desarrollo del sistema.
 2. Recopilar información a través del análisis de las imágenes.
-3. Procesar y desplegar la información requerida.
+3. Procesar y desplegar la información requerida por el usuario.
 
 ### 1.3 Solución Propuesta
 Se creará un programa el cual utilizara la biblioteca de visión artificial OpenCV el cual reconocerá distintas caras mostradas en una imagen y las encerrara en un rectángulo rojo.
