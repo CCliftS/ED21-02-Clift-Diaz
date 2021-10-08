@@ -34,13 +34,13 @@ Se solicita un programa de sistema de vigilancia basado en reconocimiento facial
 ### 1.2 Objetivos
 **Objetivo General**
 
-Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial maneje información de identidades de individuos, 
+Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial recopile y maneje datos.
 
 **Objetivos Específicos**
 
-1. Adquisición e instalación de Software necesario.
-2. Redacción de código de detección facial.
-3. Detección de caras usando programa creado.
+1. Adquirir e instalar Software necesario para el desarrollo del sistema.
+2. Recopilar información a través del análisis de las imágenes.
+3. Procesar y desplegar la información requerida.
 
 ### 1.3 Solución Propuesta
 Se creará un programa el cual utilizara la biblioteca de visión artificial OpenCV el cual reconocerá distintas caras mostradas en una imagen y las encerrara en un rectángulo rojo.
@@ -49,7 +49,7 @@ Se creará un programa el cual utilizara la biblioteca de visión artificial Ope
 
 ### 2.1 Instalación
 
-Se instala Visual Basic (Visual Studio), un entorno de desarrollo integrado en el cuál se puede crear y desarrollar softwares como aplicaciones web y móviles, sitios o servicios web. Su primera versión es de 1997, por lo que ha pasado por varias revisiones en más de dos décadas que le han dado mayor solidez y estabilidad.
+Se instala Visual Studio, un entorno de desarrollo integrado en el cuál se puede crear y desarrollar softwares como aplicaciones web y móviles, sitios o servicios web. Su primera versión es de 1997, por lo que ha pasado por varias revisiones en más de dos décadas que le han dado mayor solidez y estabilidad.
 
 En Visual Studio se puede:
 - Crear softwares y programas relativos al universo web, como es el caso de aplicaciones o móvil, incluso instrimentos de big data y analítica.
