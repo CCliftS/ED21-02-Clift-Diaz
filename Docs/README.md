@@ -49,7 +49,16 @@ Se creará un programa el cual utilizara la biblioteca de visión artificial Ope
 
 ### 2.1 Instalación
 
-Se instala Visual Basic (Visual Studio) y la biblioteca de visión artificial, OpenCV.
+Se instala Visual Basic (Visual Studio), un entorno de desarrollo integrado en el cuál se puede crear y desarrollar softwares como aplicaciones web y móviles, sitios o servicios web. Su primera versión es de 1997, por lo que ha pasado por varias revisiones en más de dos décadas que le han dado mayor solidez y estabilidad.
+
+En Visual Studio se puede:
+- Crear softwares y programas relativos al universo web, como es el caso de aplicaciones o móvil, incluso instrimentos de big data y analítica.
+- Editar, depurar y compilar código para posteriormente publicar una aplicación. Se puede ahorrar mucho esfuerzo en el desarrollo de tareas antes engorrosas y se puede ejecutar todas las fases de creación de un programa.
+- Reducir esfuerzo en actividades rutinarias y mejorar la eficiencia de las tareas esenciales de los desarrolladores.
+- Instalar integraciones y extensiones relacionadas con Machine Learning o Github.
+- Desarrollar extensiones propias. 
+
+y la biblioteca de visión artificial, OpenCV.
 
 ### 2.2 Diseño
 
