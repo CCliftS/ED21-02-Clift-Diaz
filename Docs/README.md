@@ -38,8 +38,8 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 
 **Objetivos Específicos**
 
-1. Adquirir e instalar el Software necesario.
-2. Redacción de código de detección facial.
+1. Adquirir e instalar el Software necesario para el desarrollo del sistema.
+2. Recopilar la información 
 3. Detección de caras usando programa creado.
 
 ### 1.3 Solución Propuesta
