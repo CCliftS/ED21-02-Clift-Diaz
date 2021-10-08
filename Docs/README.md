@@ -113,3 +113,5 @@ Cuando se tenga la extensión se debera cambiar la disposición del IDE para tra
 ![VisualStudio](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/VisualStudio.PNG)
 
 ## Referencia
+
+ComputerVision. (s. f.). ComputerVision. Recuperado 7 de octubre de 2021, de https://www.computervision.zone/courses/opencv-cv/
