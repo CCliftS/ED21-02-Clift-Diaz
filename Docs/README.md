@@ -43,7 +43,7 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 3. Procesar y desplegar la información requerida por el usuario.
 
 ### 1.3 Solución Propuesta
-Se creará un programa el cual utilizara la biblioteca de visión artificial OpenCV el cual reconocerá distintas caras mostradas en una imagen y las encerrara en un rectángulo rojo.
+Se creará un programa el cual ocupando la biblioteca de visión artificial OpenCV reconozca la cara de las diferentes personas que pasen frente a la camara.Se guardara la data (tiempo en camara y número de reconocimiento) de cada persona y cuando se finalice el video grabado desplegara una lista ordenada de mayor a menor con el número de reconocimiento y los intervalos de tiempo en el cual aparece la persona.
 
 ## 2. Materiales y métodos
 
