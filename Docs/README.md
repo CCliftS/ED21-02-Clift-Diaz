@@ -98,10 +98,18 @@ Con el ejercicio de detección facial realizado, y el resto de herramientas util
 
 ### Anexo A: Instalación librerías OpenCV
 
-Se ingresó a la página web https://opencv.org en la cual se hace la descarga del instalador de OpenCV, luego de su instalación se debió configurar en las variables de entorno del sistema añadiendo tanto la carpeta bin como las librerías del OpenCV.
+Se hace ingreso a la página web https://opencv.org en la cual se debe dirigir a la sección de Library y seleccionar la opción de releases en la cual se hace la descarga del instalador de OpenCV version 4.5.3
+![OpenCV](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/OpenCV.PNG)
+
+Luego de la instalación por el instalador descargado anteriormente se debe añadir a las Variables de entorno del pc en PATH la dirección de opencv\build\x64\vc15\bin y opencv\build\x64\vc15\lib
+![VariablesEntorno](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/VariablesEntorno.PNG)
 
 ### Anexo B: Instalación de IDE y configuración librerías OpenCV
-
-Se hace ingreso a la página web del IDE Visual Studio (https://visualstudio.microsoft.com/es/) en la cual se descargo el instalador, luego de su instalación se debió descargar e instalar la carga de trabajo llamada “Desarrollo para el escritorio con C++”, finalmente se tuvo que configurar en el IDE a utilizar cambiando la plataforma de solución a 64 bits y añadiendo la biblioteca a Visual Studio..
+Se hace ingreso a la página web del IDE Visual Studio https://visualstudio.microsoft.com/es/ donde se hizo descarga de Visual Studio Community 2019 
+![WebVisualStudio](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/WebVisualStudio.PNG)
+Luego de la instalación de Visual Studio se debera descargar la extensión de Desarrollo para escritorio con C++
+![C++](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/C%2B%2BVisual.PNG)
+Cuando se tenga la extensión se debera cambiar la disposición del IDE para trabajar con 64 bits y hacerlo compatible con el OpenCV, finalmente se debera incluir los archivos de la biblioteca OpenCV en el proyecto
+![VisualStudio](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/VisualStudio.PNG)
 
 ## Referencia
