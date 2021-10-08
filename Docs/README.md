@@ -29,17 +29,17 @@
 ## 1. Introducción
 
 ### 1.1 Descripción del problema
-Se solicita un programa con la capacidad de reconocer caras en una imagen y encerrarlas en un rectángulo del color especificado (rojo).
+Se solicita un programa de sistema de vigilancia basado en reconocimiento facial. En este se debera tener en cuenta la cantidad de tiempo que pasa cada persona frente a la camara independientemente de si es que esta desaparece del video en un momento determinado. Por ende se debera tener guardado por cada día la data (tiempo) de las personas que pasen por el frente de la camara y finalmente cuando se termine el video se debera desplegar los datos obtenidos en el día.
 
 ### 1.2 Objetivos
 **Objetivo General**
 
-Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial recopile y maneje los datos recogidos de una cámara. 
+Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial maneje información de identidades de individuos, 
 
 **Objetivos Específicos**
 
-1. Adquirir e instalar el Software necesario para el desarrollo del sistema.
-2. Recopilar la información 
+1. Adquisición e instalación de Software necesario.
+2. Redacción de código de detección facial.
 3. Detección de caras usando programa creado.
 
 ### 1.3 Solución Propuesta
