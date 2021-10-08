@@ -34,11 +34,11 @@ Se solicita un programa con la capacidad de reconocer caras en una imagen y ence
 ### 1.2 Objetivos
 **Objetivo General**
 
-Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial maneje información de identidades de individuos, 
+Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de visión por computadora o artificial recopile y maneje los datos recogidos de una cámara. 
 
 **Objetivos Específicos**
 
-1. Adquisición e instalación de Software necesario.
+1. Adquirir e instalar el Software necesario.
 2. Redacción de código de detección facial.
 3. Detección de caras usando programa creado.
 
