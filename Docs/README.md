@@ -69,33 +69,79 @@ Como detector facial, se utiliza la función de OpenCV haarcascade_frontalface_d
 Para guardar datos se ocupa una lista enlazada simple:
 
 ```
-struct LinkedList {
-    node* first;
-};
-LinkedList* createList()
+class Nodo
 {
-    LinkedList* l = new LinkedList();
-    l->first = NULL;
-    return l;
-}
+    Persona* persona = NULL;
+    Nodo *next = NULL;
+public:
+    Nodo()
+    {
 
-void add(LinkedList* l, int x)
-{
-    node* Nodo = createNode(x);
-    if (l->first == NULL)
-    {
-        l->first = Nodo;
     }
-    else
+    Nodo(Persona* persona)
     {
-        node* aux = l->first;
-        while (aux->next != NULL)
+        this->persona = persona;
+    }
+    Persona* getPersona()
+    {
+        return persona;
+    }
+    void setPersona(Persona* persona)
+    {
+        this->persona = persona;
+    }
+    Nodo* getNext()
+    {
+        return next;
+    }
+    void setNext(Nodo* node)
+    {
+        this->next = node;
+    }
+    ~Nodo(void)
+    {
+        cout << "Nodo Eliminado" << endl;
+    }
+};
+
+class LinkedList {
+    Nodo* first = NULL;
+public:
+    LinkedList()
+    {
+        this->first = new Nodo();
+    }
+    Nodo* getFirst()
+    {
+        return first;
+    }
+    void setFirst(Nodo* node)
+    {
+        this->first = node;
+    }
+
+    void add(Persona* persona)
+    {
+        Nodo* node = new Nodo(persona);
+        if (first == NULL)
         {
-            aux = aux->next;
+            first = node;
         }
-        aux->next = Nodo;
+        else
+        {
+            Nodo* aux = first;
+            while (aux->getNext() != NULL)
+            {
+                aux = aux->getNext();
+            }
+            aux->setNext(node);
+        }
     }
-}
+    ~LinkedList(void)
+    {
+        cout << "Nodo Eliminado" << endl;
+    }
+};
 ```
 
 Para desplegar el video se usa la funcion VideoCapture y luego se carga el haarcascade:
@@ -141,7 +187,8 @@ Se despliega la imagen:
        }
 ```
 ## 3. Resultados Obtenidos
-Se logra la lectura de unvideo y que en este se reconozcan las distintas caras presentes, además del tiempo que estuvo en camara.
+Se logra la lectura de un video, además del tiempo que la persona estuvo frente a la camara.
+
 // poner una imagen
 
 ## 4. Conclusiones
