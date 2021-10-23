@@ -40,7 +40,8 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 
 1. Recopilar información a través del analisis del video.
 2. Recopilar el tiempo en el video asociado a personas.
-3. Desplegar información requerida por el administrador.
+3. Recopilar la información adquirida en una lista enlazada.
+4. Desplegar información requerida por el administrador.
 
 ### 1.3 Solución Propuesta
 Se creará un programa el cual ocupando la biblioteca de visión artificial OpenCV reconozca la cara de las diferentes personas que pasen frente a la camara.Se guardara la data (tiempo en camara y número de reconocimiento) de cada persona y cuando se finalice el video grabado desplegara una lista ordenada de mayor a menor con el número de reconocimiento y los intervalos de tiempo en el cual aparece la persona.
