@@ -66,31 +66,83 @@ También se requiere OpenCV, ésta es una biblioteca de código abierto que es m
 ### 2.3 Implementación
 Como detector facial, se utiliza la función de OpenCV haarcascade_frontalface_default.xml, y se configura en Visual Studio en el lenguaje C++.
 
-Se carga haarcascade:
+Para guardar datos se ocupa una lista enlazada simple:
 
 ```
-       	CascadeClassifier faceCascade;
-        faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-        if (faceCascade.empty()) { cout << "XML file not found" << endl; }
-        vector<Rect> faces;
-        
-        faceCascade.detectMultiScale(img, faces, 1.1, 10);
+struct LinkedList {
+    node* first;
+};
+LinkedList* createList()
+{
+    LinkedList* l = new LinkedList();
+    l->first = NULL;
+    return l;
+}
+
+void add(LinkedList* l, int x)
+{
+    node* Nodo = createNode(x);
+    if (l->first == NULL)
+    {
+        l->first = Nodo;
+    }
+    else
+    {
+        node* aux = l->first;
+        while (aux->next != NULL)
+        {
+            aux = aux->next;
+        }
+        aux->next = Nodo;
+    }
+}
+```
+
+Para desplegar el video se usa la funcion VideoCapture y luego se carga el haarcascade:
+
+```
+    VideoCapture cap(0);// Para poner algun video cambiar el 0 por el nombre del video
+    if (!cap.isOpened()) {
+        cout << "Error abriendo video o camara";
+        return -1;
+    }
+    CascadeClassifier faceCascade;
+    faceCascade.load("Resources/haarcascade_frontalface_default.xml");
+    if (faceCascade.empty()) { cout << "XML file not found" << endl; }
+    vector<Rect> faces;
 ```
 Se itera por las caras detectadas y se destacan:
 
 ```
-       for (int i = 0;i < faces.size();i++) {
-		     rectangle(img,faces[i].tl(),faces[i].br(),Scalar(0,0,255),2);
-	      }
+       Mat frame;
+        cap >> frame;
+        if (frame.empty()) {
+            break;
+        }
+        faceCascade.detectMultiScale(frame, faces, 1.1, 10);
+        for (int i = 0;i < faces.size();i++) {
+            rectangle(frame, faces[i].tl(), faces[i].br(), Scalar(0, 0, 255), 2);
+            Persona* persona = new Persona(rand());
+            if (tiempo1 == 0) {
+                tiempo1 = time(0);
+            }
+            cout << persona->getCodigo()<<endl;
+            int tiempo2 = time(0);
+            persona->setTiempo(tiempo2, tiempo1);   
+            int tiempofinal = persona->getTiempo();
+        }
 ```
 Se despliega la imagen:
 ```
-       imshow("Image",img);
-       waitKey(0);
+       imshow("Frame", frame);
+       char c = (char)waitKey(15);// Para terminar video presionar ESC
+       if (c == 27) {
+       	break;
+       }
 ```
 ## 3. Resultados Obtenidos
-Se logra la lectura de una imagen y que en esta se reconozcan las distintas caras presentes.
-![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
+Se logra la lectura de unvideo y que en este se reconozcan las distintas caras presentes, además del tiempo que estuvo en camara.
+// poner una imagen
 
 ## 4. Conclusiones
 La biblioteca de OpenCV abre un mar de posibilidades en cuánto a la resolución de problemas de identificación de patrones visuales. Además de que no requiere de mucho esfuerzo para instalarla y utilizarla.
