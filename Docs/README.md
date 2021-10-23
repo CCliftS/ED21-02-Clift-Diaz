@@ -188,9 +188,8 @@ Se despliega la imagen:
        }
 ```
 ## 3. Resultados Obtenidos
-Se logra la lectura de un video, además del tiempo que la persona estuvo frente a la camara.
+Se logra la lectura de un video, ademas del reconocimiento de caras dentro de este, pero al momento de guardar los datos en la lista enlazada no supimos como diferenciar los datos recibidos del video.
 
-// poner una imagen
 
 ## 4. Conclusiones
 La biblioteca de OpenCV abre un mar de posibilidades en cuánto a la resolución de problemas de identificación de patrones visuales. Además de que no requiere de mucho esfuerzo para instalarla y utilizarla.
