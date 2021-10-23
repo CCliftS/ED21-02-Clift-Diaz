@@ -6,7 +6,7 @@
 - Camilo Clift (Coordinador)
 - Emilio Díaz (Bitácora)
 ## Bitácora
-- [Ver Bitácora](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/BITACORA.md)
+- [Ver Bitácora](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.2/Docs/BITACORA.md)
 ## Resumen
 
 > Se requiere implementar un sistema de detección facial en una imagen, haciendo uso de un algoritmo computacional y una biblioteca libre de visión artificial.
@@ -26,8 +26,8 @@
 ![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
 
 ## Documentos
-- [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/README.md)
+- [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.2/Docs)
 ## Recursos Código Fuente
-- [Ver Recursos Código Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/main/Resources)
+- [Ver Recursos Código Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.2/Resources)
 ## Código Fuente
-- [Ver Codigo Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/main/src)
+- [Ver Codigo Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.2/src)
