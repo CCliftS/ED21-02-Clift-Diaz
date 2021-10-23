@@ -138,8 +138,8 @@
       LinkedList* l = new LinkedList();
       int codigo = 100;
       int tiempo1 = 0;
-      VideoCapture cap(0);// Para poner algun video cambiar el 0 por el nombre del video
-      if (!cap.isOpened()) {
+      VideoCapture cap(0); //Para este trabajo fue utilizada la camara del computador, ya que no encontramos videos, pero 
+      if (!cap.isOpened()) { //si se le cambia el 0 a una dirección de video funcionaria con videos.
         cout << "Error abriendo video o camara";
         return -1;
       }
