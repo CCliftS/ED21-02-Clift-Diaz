@@ -62,7 +62,8 @@ En Visual Studio se puede:
 También se requiere OpenCV, ésta es una biblioteca de código abierto que es muy útil para aplicaciones de visión por computadora, como análisis de video, análisis de secuencias de CCTV y análisis de imágenes. OpenCV está escrito por C ++ y tiene más de 2500 algoritmos optimizados. Cuando se crea aplicaciones para la visión por computadora que no se quiere crear desde cero, se puede usar esta biblioteca para comenzar a enfocarse en problemas del mundo real. Hay muchas empresas que utilizan esta biblioteca en la actualidad, como Google, Amazon, Microsoft y Toyota. Contribuyen muchos investigadores y desarrolladores. Se puede instalar fácilmente en cualquier SO como Windows, Ubuntu y MacOS.
 
 ### 2.2 Diseño
-
+Se usa una lista enlazada para guardar los datos (codigo y tiempo) de las personas grabadas.
+![DIAGRAMA CLASE](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.2/Resources/diagrama%20clase.png)
 ### 2.3 Implementación
 Como detector facial, se utiliza la función de OpenCV haarcascade_frontalface_default.xml, y se configura en Visual Studio en el lenguaje C++.
 
