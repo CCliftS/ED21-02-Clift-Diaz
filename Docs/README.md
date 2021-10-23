@@ -12,7 +12,7 @@
 
 ## Resumen
 
-> Se requiere implementar un sistema de detección facial en una imagen, haciendo uso de un algoritmo computacional y una biblioteca libre de visión artificial.
+> Se requiere implementar un sistema de detección facial en un video, haciendo uso de un algoritmo computacional y una biblioteca libre de visión artificial.
 > 
 > Se requiere destacar o resaltar con una marca (rectángulo rojo) en la imagen, todas las caras humanas que aparecen en ella.
 > 
@@ -24,7 +24,9 @@
 >
 > Se configura la biblioteca OpenCV en el entorno de desarrollo integrado (Visual Studio).
 > 
-> Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en una imagen de formato .jpg
+> Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en un video o camara asociada.
+>
+> Se crea una Lista Enlazada la cual guardara los datos de las personas.
 
 ## 1. Introducción
 
