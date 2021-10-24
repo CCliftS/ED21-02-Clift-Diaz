@@ -135,46 +135,52 @@
 
     int main()
     {
-      LinkedList* l = new LinkedList();
-      int codigo = 100;
-      int tiempo1 = 0;
-      VideoCapture cap(0); //Para este trabajo fue utilizada la camara del computador, ya que no encontramos videos, pero 
-      if (!cap.isOpened()) { //si se le cambia el 0 a una dirección de video funcionaria con videos.
-        cout << "Error abriendo video o camara";
-        return -1;
-      }
-      CascadeClassifier faceCascade;
-      faceCascade.load("Resources/haarcascade_frontalface_default.xml");
-      if (faceCascade.empty()) { cout << "XML file not found" << endl; }
-      vector<Rect> faces;
-      while (1) {
-        Mat frame;
-        cap >> frame;
-        if (frame.empty()) {
-            break;
+        LinkedList* l = new LinkedList();
+        string archivo;
+        int numero;
+        VideoCapture cap(0);// Para poner algun video cambiar el 0 por el nombre del video
+        if (!cap.isOpened()) {
+            cout << "Error abriendo video o camara";
+            return -1;
         }
-        faceCascade.detectMultiScale(frame, faces, 1.1, 10);
-        for (int i = 0;i < faces.size();i++) {
-            rectangle(frame, faces[i].tl(), faces[i].br(), Scalar(0, 0, 255), 2);
-            /*if (buscarCodigo(l, codigo, 0) == 0) {    //Nuestro plan es que compare la cara que detecta con una cara guardada en la clase persona, pero no sabemos como es  
-                int tiempo1 = time(0);                  //guardada la cara y como podriamos compararla
-            }                                           
-            int tiempo2 = time(0);
-            int time = tiempo2 - tiempo1;
-            buscarCodigo(l, codigo, time);
-            codigo++;
-        */}
-        imshow("Frame", frame);
-        char c = (char)waitKey(15);// Para terminar video presionar ESC
-        if (c == 27) {
-            break;
+        CascadeClassifier faceCascade;
+        faceCascade.load("Resources/haarcascade_frontalface_default.xml");
+        if (faceCascade.empty()) { cout << "XML file not found" << endl; }
+        vector<Rect> faces;
+        while (1) {
+            Mat frame;
+            cap >> frame;
+            if (frame.empty()) {
+                break;
+            }
+            faceCascade.detectMultiScale(frame, faces, 1.1, 10);
+            for (int i = 0;i < faces.size();i++) {
+                rectangle(frame, faces[i].tl(), faces[i].br(), Scalar(0, 0, 255), 2);
+                Mat foto;
+                resize(frame,foto,Size(300,300),0,0,INTER_LINEAR);
+                archivo= "prueba";
+                numero = 1;
+                stringstream ssfn;
+                ssfn << archivo.c_str() << numero << ".jpg";
+                archivo = ssfn.str();
+                imwrite(archivo, foto);
+            
+                /*if (buscarCodigo(l, codigo, 0, foto) == 0) {    El comentario es donde iria un condicional que diferenciara las caras de las personas y las ingresaria a la
+                    int tiempo1 = time(0);                        linked list, la cual esta desarrollada.
+                }                                           
+                int tiempo2 = time(0);
+                int time = tiempo2 - tiempo1;
+                buscarCodigo(l, codigo, time, foto);
+                codigo++;
+                */
+                numero++;
+            }
+            imshow("Frame", frame);
+            char c = (char)waitKey(10);// Para terminar video presionar ESC
+            if (c == 27) {
+                break;
+            }
         }
-      }
-    OrdenarCincoMayores(l);
-    LimpiarMemoria(l);
-    delete(l);
-    return 0;
-    }
 ## Persona
     class Persona {
       int codigo;
