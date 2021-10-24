@@ -181,6 +181,11 @@
                 break;
             }
         }
+    //OrdenarCincoMayores(l); Comentado por error nullpointer ya que no se pueden guardar las personas si no se diferencian
+    //LimpiarMemoria(l);      
+    delete(l);
+    return 0;
+    }
 ## Persona
     class Persona {
       int codigo;
