@@ -26,7 +26,7 @@
 ![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
 
 ## Documentos
-- [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/README.md)
+- [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/README.md)
 ## Recursos Código Fuente
 - [Ver Recursos Código Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.3/Resources)
 ## Código Fuente
