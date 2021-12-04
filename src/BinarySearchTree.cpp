@@ -86,7 +86,7 @@ BinarySearchTreeNode* BinarySearchTree::CincoMayores(BinarySearchTreeNode* node,
             {
                 if(SegundoMayor!= nullptr)
                 {
-                    if(node->frames >= SegundoMayor->frames)
+                    if(node->frames > SegundoMayor->frames)
                     {
                         QuintoMayor = CuartoMayor;
                         CuartoMayor = TercerMayor;
@@ -97,7 +97,7 @@ BinarySearchTreeNode* BinarySearchTree::CincoMayores(BinarySearchTreeNode* node,
                     {
                         if(TercerMayor!= nullptr)
                         {
-                            if(node->frames >= TercerMayor->frames)
+                            if(node->frames > TercerMayor->frames)
                             {
                                 QuintoMayor = CuartoMayor;
                                 CuartoMayor = TercerMayor;
@@ -107,7 +107,7 @@ BinarySearchTreeNode* BinarySearchTree::CincoMayores(BinarySearchTreeNode* node,
                             {
                                 if(CuartoMayor!= nullptr)
                                 {
-                                    if(node->frames >= CuartoMayor->frames)
+                                    if(node->frames > CuartoMayor->frames)
                                     {
                                         QuintoMayor = CuartoMayor;
                                         CuartoMayor = node;
@@ -116,7 +116,7 @@ BinarySearchTreeNode* BinarySearchTree::CincoMayores(BinarySearchTreeNode* node,
                                     {
                                         if(QuintoMayor!= nullptr)
                                         {
-                                            if(node->frames >= QuintoMayor->frames)
+                                            if(node->frames > QuintoMayor->frames)
                                             {
                                                 QuintoMayor = node;
                                             }
