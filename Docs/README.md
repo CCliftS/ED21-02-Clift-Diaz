@@ -92,7 +92,8 @@ std::vector<cv::Rect> FaceDetector::detectFaceRectangles(const cv::Mat& frame) {
 ```
 Para guardar datos se ocupa un árbol binario simple:
 
-void BinarySearchTree::insert(Mat image) {
+```
+    void BinarySearchTree::insert(Mat image) {
     root = insert(root, image);
 }
 
@@ -265,7 +266,7 @@ BinarySearchTree::~BinarySearchTree(void)
 {
     cout << "Arbol Eliminado" << endl;
 }
-
+```
 ## 3. Resultados Obtenidos
 Se logra la lectura del vídeo o la secuencia de imágenes y que en esta se reconozcan las distintas caras presentes.
 ![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/Imagenes/DeteccionFacial.png)
