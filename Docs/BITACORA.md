@@ -1,6 +1,6 @@
 # Bitácora
 
-[(Volver)](../README.md)
+[(Volver)](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.3)
 
 | Fecha  | Objetivo  | Trabajo Realizado | Responsable | Tiempo Estimado | Tiempo Real |
 |--------|-----------|-------------------|-------------|-----------------|-------------|
