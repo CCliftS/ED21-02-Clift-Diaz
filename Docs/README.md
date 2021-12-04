@@ -66,7 +66,7 @@ También se requiere OpenCV, ésta es una biblioteca de código abierto que es m
 
 ### 2.2 Diseño
 Se usa un árbol binario para guardar los datos (codigo y tiempo) de las personas grabadas.
-![DIAGRAMA CLASE](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Resources/Binary Tree.png)
+![DIAGRAMA CLASE](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/Imagenes/BinaryTree.png)
 
 ### 2.3 Implementación
 Como detector facial, se utiliza la función de OpenCV haarcascade_frontalface_default.xml, y se configura en Visual Studio en el lenguaje C++.
