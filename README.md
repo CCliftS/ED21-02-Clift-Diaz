@@ -28,6 +28,6 @@
 ## Documentos
 - [Reporte Técnico](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/README.md)
 ## Recursos Código Fuente
-- [Ver Recursos Código Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/main/Resources)
+- [Ver Recursos Código Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.3/Resources)
 ## Código Fuente
-- [Ver Codigo Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/main/src)
+- [Ver Codigo Fuente](https://github.com/CCliftS/ED21-02-Clift-Diaz/tree/release-0.3/src)
