@@ -267,8 +267,12 @@ BinarySearchTree::~BinarySearchTree(void)
 }
 
 ## 3. Resultados Obtenidos
-Se logra la lectura de una imagen y que en esta se reconozcan las distintas caras presentes.
-![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/main/Docs/Imagenes/ImagenMuestra.PNG)
+Se logra la lectura del vídeo o la secuencia de imágenes y que en esta se reconozcan las distintas caras presentes.
+![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/Imagenes/DeteccionFacial.png)
+
+Se despliega la información necesitada por el usuario.
+
+![ImagenMuestra](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/Imagenes/Mayores.png)
 
 ## 4. Conclusiones
 La biblioteca de OpenCV abre un mar de posibilidades en cuánto a la resolución de problemas de identificación de patrones visuales. Además de que no requiere de mucho esfuerzo para instalarla y utilizarla.
