@@ -45,6 +45,7 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 3. Recopilar la información adquirida en un AVL.
 4. Desplegar información requerida por el administrador.
 5. Guardar video analizado asociado a su respectiva sesión.
+6. Desplegar identidades con intervalos de tiempo.
 
 ### 1.3 Solución Propuesta
 Se creará un programa el cual ocupando la biblioteca de visión artificial OpenCV reconozca la cara de las diferentes personas que pasen frente a la cámara, las estandarice y las guarde y compare haciendo uso de una estructura de datos (AVL). Se guardara la data (tiempo en cámara y número de reconocimiento) de cada persona y cuando se finalice el video grabado o la secuencia de imágenes, se desplegará una lista ordenada de mayor a menor con el número de reconocimiento y los cinco mayores intervalos de tiempo en el cual aparece la persona. Además se guardará el vídeo o imágenes analizadas de acuerdo a su sesión de tiempo.
