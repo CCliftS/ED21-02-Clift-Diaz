@@ -26,7 +26,7 @@
 >  
 > Se crea un sistema que detecta y destaca en un rectángulo rojo todas las caras humanas visibles en un video de formato .mp4 o una secuencia de imágenes .jpg.
 > 
-> Se crea un Árbol Binario el cuál guardara los datos de las personas.
+> Se crea un  AVL el cuál guardara los datos de las personas.
 
 ## 1. Introducción
 
@@ -42,12 +42,12 @@ Construir un sistema de vigilancia de tráfico peatonal, el cuál a través de v
 
 1. Recopilar información a través del analisis del video.
 2. Recopilar el tiempo en el video asociado a personas.
-3. Recopilar la información adquirida en un árbol binario.
+3. Recopilar la información adquirida en un AVL.
 4. Desplegar información requerida por el administrador.
 5. Guardar video analizado asociado a su respectiva sesión.
 
 ### 1.3 Solución Propuesta
-Se creará un programa el cual ocupando la biblioteca de visión artificial OpenCV reconozca la cara de las diferentes personas que pasen frente a la cámara, las estandarice y las guarde y compare haciendo uso de una estructura de datos (Árbol Binario). Se guardara la data (tiempo en cámara y número de reconocimiento) de cada persona y cuando se finalice el video grabado o la secuencia de imágenes, se desplegará una lista ordenada de mayor a menor con el número de reconocimiento y los cinco mayores intervalos de tiempo en el cual aparece la persona. Además se guardará el vídeo o imágenes analizadas de acuerdo a su sesión de tiempo.
+Se creará un programa el cual ocupando la biblioteca de visión artificial OpenCV reconozca la cara de las diferentes personas que pasen frente a la cámara, las estandarice y las guarde y compare haciendo uso de una estructura de datos (AVL). Se guardara la data (tiempo en cámara y número de reconocimiento) de cada persona y cuando se finalice el video grabado o la secuencia de imágenes, se desplegará una lista ordenada de mayor a menor con el número de reconocimiento y los cinco mayores intervalos de tiempo en el cual aparece la persona. Además se guardará el vídeo o imágenes analizadas de acuerdo a su sesión de tiempo.
 
 ## 2. Materiales y métodos
 
@@ -65,7 +65,7 @@ En Visual Studio se puede:
 También se requiere OpenCV, ésta es una biblioteca de código abierto que es muy útil para aplicaciones de visión por computadora, como análisis de video, análisis de secuencias de CCTV y análisis de imágenes. OpenCV está escrito por C ++ y tiene más de 2500 algoritmos optimizados. Cuando se crea aplicaciones para la visión por computadora que no se quiere crear desde cero, se puede usar esta biblioteca para comenzar a enfocarse en problemas del mundo real. Hay muchas empresas que utilizan esta biblioteca en la actualidad, como Google, Amazon, Microsoft y Toyota. Contribuyen muchos investigadores y desarrolladores. Se puede instalar fácilmente en cualquier SO como Windows, Ubuntu y MacOS.
 
 ### 2.2 Diseño
-Se usa un árbol binario para guardar los datos (codigo y tiempo) de las personas grabadas.
+Se usa un AVL para guardar los datos (codigo y tiempo) de las personas grabadas.
 ![DIAGRAMA CLASE](https://github.com/CCliftS/ED21-02-Clift-Diaz/blob/release-0.3/Docs/Imagenes/BinaryTree.png)
 
 ### 2.3 Implementación
@@ -90,181 +90,127 @@ std::vector<cv::Rect> FaceDetector::detectFaceRectangles(const cv::Mat& frame) {
 
     return faces;
 ```
-Para guardar datos se ocupa un árbol binario simple:
+Para guardar datos se ocupa un AVL:
 
 ```
-    void BinarySearchTree::insert(Mat image) {
-    root = insert(root, image);
+#include "opencv2/core.hpp"
+#include "AVLPersonas.hpp"
+#include "BinarySearchTreeNode.hpp"
+#include <iostream>
+
+# define max(A,B) ((A)>(B)?(A):(B)) /* Definición de macros */
+# define min(A,B) ((A)>(B)?(B):(A))
+
+using namespace std;
+using namespace cv;
+
+int flag;
+
+/**
+ * Inserta la imagen en el arbol le asigna un identificador.
+ *
+ * @param image (Mat) imagen de tamaño 25x25 en gris
+ */
+
+void AVLPersonas::insert(Mat image) {
+    root = insert(root, image,root->frames);
 }
 
-double BinarySearchTree::euclideanDistance(Mat img1, Mat img2) {
-    return norm(img1, img2, NORM_L2);
-}
-
-BinarySearchTreeNode* BinarySearchTree::insert(BinarySearchTreeNode* node, Mat image) {
-    // Tolerancia para considerar una imagen igual
-    //Si el árbol no tiene hijos
-    if (node == nullptr) {
+BinarySearchTreeNode* AVLPersonas::insert(BinarySearchTreeNode* node, Mat image,int frames) {
+    if (node == NULL)  /* Llegó a un punto de inserción */
+    {
         node = new BinarySearchTreeNode();
         node->key = ++counter;
         node->image = image;
         node->left = nullptr;
         node->right = nullptr;
         node->frames = 1;
+        node->balance = 0; /* Los dos hijos son nulos */
+        flag = 1; /* Marca necesidad de revisar balances */
+        return node; /* retorna puntero al insertado */
+    }
+    else if (node->frames > frames)
+    {
+        //desciende por la derecha
+        node->right = insert(node->right,node->image,node->frames);
+        //se pasa por la siguiente línea en la revisión ascendente
+        node->balance += flag; /* Incrementa factor de balance */
+    }
+    else if (node->frames < frames)
+    {
+        //desciende por la izquierda
+        node->left = insert(node->left,node->image,node->frames);
+        //se corrige en el ascenso
+        node->balance -= flag; /* Decrementa balance */
+    }
+    else   /* (t->k == key) Ya estaba en el árbol */
+    {
+        cout<<"Error al insertar"<<endl;
+        flag = 0;
+    }
 
+    if (flag == 0) /* No hay que rebalancear. Sigue el ascenso */
         return node;
+
+    /*El código a continuación es el costo adicional para mantener propiedad AVL */
+    /* Mantiene árbol balanceado avl. Sólo una o dos rotaciones por inserción */
+    if (node->balance < -1)
+    {
+        /* Quedó desbalanceado por la izquierda. Espejos Casos c y d.*/
+        if (node->left->balance > 0)
+            /* Si hijo izquierdo está cargado a la derecha */
+            node->left = LeftRotation(node->left);
+        node = RightRotation(node);
+        flag = 0; /* El subárbol no aumenta su altura */
     }
-    else if (SIMILAR < euclideanDistance(node->image, image)
-        && DIFFERENT > euclideanDistance(node->image, image)) {
-        node->left = insert(node->left, image);
+    else if (node->balance > 1)
+    {
+        /* Si quedó desbalanceado por la derecha: Casos c y d.*/
+        if (node->right->balance < 0)
+            /* Si hijo derecho está cargado a la izquierda Caso d.*/
+            node->right = RightRotation(node->right);
+        node = LeftRotation(node); /* Caso c.*/
+        flag = 0; /* El subárbol no aumenta su altura */
     }
-    else if (DIFFERENT <= euclideanDistance(node->image, image)) {
-        node->right = insert(node->right, image);
-    }
-    else { //La cara es igual (menor a la distancia exigida para similar)
-        node->image = image; //Cambio la imagen por la nueva
-        node->frames++; // Actualizo la cantidad de frames en la que ha estado la persona
-    }
+    else if (node->balance == 0)/* La inserción lo balanceo */
+        flag = 0; /* El subárbol no aumenta su altura. Caso a*/
+    else /* Quedó desbalanceado con -1 ó +1 Caso b */
+        flag = 1; /* Propaga ascendentemente la necesidad de rebalancear */
+    return node;
+}
+BinarySearchTreeNode* AVLPersonas::insertAVL(BinarySearchTreeNode* node, Mat) {
+    node = insert(node,node->image,node->frames);
     return node;
 }
 
-BinarySearchTreeNode* BinarySearchTree::LimpiarMemoria(BinarySearchTreeNode* node)
+BinarySearchTreeNode* AVLPersonas::RightRotation(BinarySearchTreeNode* node)
 {
-    if (node == nullptr)
-    {
-        return node;
-    }
-    else
-    {
-        BinarySearchTreeNode* aux = node;
-        node = LimpiarMemoria(node->left);
-        node = LimpiarMemoria(node->right);
-        delete(aux);
-        cout << "Nodo Eliminado" << endl;
-    }
+    BinarySearchTreeNode* temp = node;
+    int x, y;
+    node = node->left;
+    temp->left = node->right;
+    node->right = temp;
+    x = temp->balance; // oldbal(A)
+    y = node->balance;    // oldbal(B)
+    temp->balance = x + 1 - min(y, 0);  // nA
+    node->balance = max(x + 2 + max(y, 0), y + 1); //nB
+    return node;
 }
 
-BinarySearchTreeNode* BinarySearchTree::CincoMayores(BinarySearchTreeNode* node, BinarySearchTreeNode* PrimerMayor,
-    BinarySearchTreeNode* SegundoMayor, BinarySearchTreeNode* TercerMayor, BinarySearchTreeNode* CuartoMayor,
-    BinarySearchTreeNode* QuintoMayor)
-{   
-    if (node == nullptr)
-    {
-        return node;
-    }
-    else
-    {
-        if(PrimerMayor!= nullptr)
-        {
-            if(node->frames >= PrimerMayor->frames)
-            {
-                QuintoMayor = CuartoMayor;
-                CuartoMayor = TercerMayor;
-                TercerMayor = SegundoMayor;
-                SegundoMayor = PrimerMayor;
-                PrimerMayor = node;
-            }
-            else
-            {
-                if(SegundoMayor!= nullptr)
-                {
-                    if(node->frames > SegundoMayor->frames)
-                    {
-                        QuintoMayor = CuartoMayor;
-                        CuartoMayor = TercerMayor;
-                        TercerMayor = SegundoMayor;
-                        SegundoMayor = node;
-                    }
-                    else
-                    {
-                        if(TercerMayor!= nullptr)
-                        {
-                            if(node->frames > TercerMayor->frames)
-                            {
-                                QuintoMayor = CuartoMayor;
-                                CuartoMayor = TercerMayor;
-                                TercerMayor = node;
-                            }
-                            else
-                            {
-                                if(CuartoMayor!= nullptr)
-                                {
-                                    if(node->frames > CuartoMayor->frames)
-                                    {
-                                        QuintoMayor = CuartoMayor;
-                                        CuartoMayor = node;
-                                    }
-                                    else
-                                    {
-                                        if(QuintoMayor!= nullptr)
-                                        {
-                                            if(node->frames > QuintoMayor->frames)
-                                            {
-                                                QuintoMayor = node;
-                                            }
-                                        }
-                                        else
-                                        {
-                                            QuintoMayor = node;
-                                        }
-                                    }
-                                }
-                                else
-                                {
-                                    CuartoMayor = node;
-                                }
-                            }
-                        }
-                        else
-                        {
-                            TercerMayor = node;
-                        }
-                    }
-                }
-                else
-                {
-                    SegundoMayor = node;
-                }
-            }
-        }       
-        else
-        {
-            PrimerMayor = node;
-        }
-        CincoMayores(node->right, PrimerMayor, SegundoMayor, TercerMayor, CuartoMayor, QuintoMayor);   
-    }
-    if (node->left==nullptr&&node->right==nullptr) {
-        if (PrimerMayor != nullptr)
-        {
-            cout << "La ID con mayor frames en pantalla es: " << PrimerMayor->key << " con: " << PrimerMayor->frames << " frames" << endl;
-
-            if (SegundoMayor != nullptr)
-            {
-                cout << "La segunda ID con mayor frames es: " << SegundoMayor->key << " con: " << SegundoMayor->frames << " frames" << endl;
-
-                if (TercerMayor != nullptr)
-                {
-                    cout << "La tercera ID con mayor frames frames es: " << TercerMayor->key << " con: " << TercerMayor->frames << " frames" << endl;
-
-                    if (CuartoMayor != nullptr)
-                    {
-                        cout << "La cuerta ID con mayor frames es: " << CuartoMayor->key << " con: " << CuartoMayor->frames << " frames" << endl;
-
-                        if (QuintoMayor != nullptr)
-                        {
-                            cout << "La quinta ID con mayor frames es: " << QuintoMayor->key << " con: " << QuintoMayor->frames << " frames" << endl;
-                        }
-                    }
-                }
-            }
-        }
-    }
-    
-}
-
-BinarySearchTree::~BinarySearchTree(void)
+BinarySearchTreeNode* AVLPersonas::LeftRotation(BinarySearchTreeNode* node)
 {
-    cout << "Arbol Eliminado" << endl;
+    BinarySearchTreeNode* temp;
+    int x, y;
+    temp = node;
+    node = node->right;
+    temp->right = node->left;
+    node->left = temp;
+    //Recalcula factores de balance de los dos nodos
+    x = temp->balance; // oldbal(A)
+    y = node->balance; // oldbal(B)
+    temp->balance = x - 1 - max(y, 0); // nA
+    node->balance = min(x - 2 + min(y, 0), y - 1); // nB
+    return node;
 }
 ```
 ## 3. Resultados Obtenidos
