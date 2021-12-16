@@ -9,6 +9,11 @@ class BinarySearchTreeNode {
 public:
     int key;
     int frames;
+    int balance;
+    int horaInicio;
+    int horaFin;
+    int minInicio;
+    int minFin;
     Mat image; // Imagen de tamaño 25x25
     BinarySearchTreeNode* left;
     BinarySearchTreeNode* right;
