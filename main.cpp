@@ -100,6 +100,7 @@ int main()
 
     // Leemos todas las caras de los archivos de imágenes y las insertamos en el árbol
     BinarySearchTree abb;
+    AVLPersonas avlp;
     FaceDetector fdetector;
     ImageCoding icoding;
     Mat image;
@@ -162,7 +163,9 @@ int main()
     BinarySearchTreeNode* QuintoMayor = nullptr;
 
     BinarySearchTreeNode* nodo=abb.CincoMayores(abb.root,PrimerMayor,SegundoMayor,TercerMayor,CuartoMayor,QuintoMayor);
-    
+    abb.AgregarNodoAVL(abb.root,avlp);
+    avlp.Recorrer(avlp.root);
+    avlp.DesplegarConIntervalo(avlp.root);
     //abb.LimpiarMemoria(abb.root);
     destroyAllWindows();
     return 0;
